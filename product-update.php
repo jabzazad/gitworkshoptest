@@ -503,12 +503,9 @@
 					echo	'<div class="block2">
 							<div class="block2-pic hov-img0">
 								<img src="data:image/jpeg;base64,'.base64_encode($row['Pimage'] ).'" alt="IMG-PRODUCT"height="300" width="300" class="img-thumnail"> ';
-								echo '<form action="product-update.php" method="get">';
-				  echo '<button type="submit" name="count" 
-				   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 "value="'.$row['Pid'].'">
-							Update
-								</button';		
-						echo "</form>";
+								echo '<a href="product-detail.php?count='.$row['Pid'].'" name="count" 
+								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 " value="'.$row['Pid'].'">
+										 View';	
 						echo '</div>';
 
 							echo '<div class="block2-txt flex-w flex-t p-t-14">
@@ -671,42 +668,6 @@ Thailand or call us on  (+86)10-62785025
 	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-	
-	</script>
 <!--===============================================================================================-->
 	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>
